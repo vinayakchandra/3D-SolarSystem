@@ -12,8 +12,8 @@ const scene = new THREE.Scene();
 
 //camera
 const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
-camera.position.z = 5;
-const cameraDistance = 4;
+// camera.position.z = 500;
+const cameraDistance = 6;
 let useAnimatedCamera = true;
 
 //renderer
@@ -60,10 +60,16 @@ const venus = getPlanet({size: 0.2, distance: 1.65, img: "venus.png"});
 solarSystem.add(venus);
 
 //moon
-const moon = getPlanet({size: 0.08, distance: 0.6, img: "moon.png",bumpPath:"moonbump4k.jpg"});
+const moon = getPlanet({size: 0.08, distance: 0.6, img: "moon.png", bumpPath: "moonbump4k.jpg"});
 solarSystem.add(moon);
 //earth
-const earth = getPlanet({children: [moon], size: 0.225, distance: 2.1, img: '00_earthmap1k.jpg', bumpPath:"01_earthbump1k.jpg"});
+const earth = getPlanet({
+  children: [moon],
+  size: 0.225,
+  distance: 2.1,
+  img: '00_earthmap1k.jpg',
+  bumpPath: "01_earthbump1k.jpg"
+});
 solarSystem.add(earth);
 
 //mars
